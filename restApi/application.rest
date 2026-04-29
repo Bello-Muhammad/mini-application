@@ -1,0 +1,41 @@
+###Add new application
+POST http://localhost:3000/api/application
+Content-Type: multipart/form-data; boundary=----Boundary
+Accept: application/json
+
+------Boundary
+Content-Disposition: form-data; name="firstName"
+
+John
+------Boundary
+Content-Disposition: form-data; name="lastName"
+
+Doe
+------Boundary
+Content-Disposition: form-data; name="email"
+
+email@example.com
+------Boundary
+Content-Disposition: form-data; name="phone"
+
++23490 1111 2222
+------Boundary
+Content-Disposition: form-data; name="role"
+
+CANDIDATE
+------Boundary
+Content-Disposition: form-data; name="cv"; filename="BelloBCv2.pdf"
+Content-Type: application/pdf
+
+< "C:\Users\USER\Downloads\BelloBCv2.pdf"
+------Boundary--
+
+###GET ALL user application
+GET http://localhost:3000/api/applications?userId=9d25216c-db11-4d14-9647-6f50daf2cc1e
+Content-Type: application/json
+Accept: application/json
+
+###GET user application
+GET http://localhost:3000/api/applications/:id
+Content-Type: application/json
+Accept: application/json
